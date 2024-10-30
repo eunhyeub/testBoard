@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>고객 정보</title>
+</head>
+<body>
+<h2>고객 정보</h2>
+<form>
+<table border="1">
+	<tr>
+		<th>고객번호</th><th>고객명</th><th>고객전화</th>
+	</tr>
+	<tr th:each="gogek:${gogeks}">
+		<td th:text="${gogek.gogekno}"></td>
+		<td th:text="${gogek.gogekname}"></td>
+		<td th:text="${gogek.gogektel}"></td>
+	</tr>
+	<tr>
+		<td colspan="3" th:text="|인원수 : ${gogeks.size}명|"></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
